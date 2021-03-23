@@ -1,0 +1,128 @@
+:root {
+  --text-color: #111;
+  --text-color-secondary: #777;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+main {
+  min-height: 100px;
+  min-width: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#carousel {
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  grid-template-rows: 400px 42px;
+}
+
+#cLeft,
+#cRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cMiddle {
+  overflow: hidden;
+  position: relative;
+}
+
+#cBottom {
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#arrowLeft,
+#arrowRight {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+#arrowLeft {
+  border-top: 3px solid var(--text-color-secondary);
+  border-left: 3px solid var(--text-color-secondary);
+  transform: rotate(-45deg);
+}
+
+#arrowLeft:hover {
+    border-top: 4px solid var(--text-color);
+    border-left: 4px solid var(--text-color);
+  }
+
+#arrowRight {
+  border-top: 3px solid var(--text-color-secondary);
+  border-right: 3px solid var(--text-color-secondary);
+  transform: rotate(45deg);
+}
+
+#arrowRight:hover {
+  border-top: 4px solid var(--text-color);
+  border-right: 4px solid var(--text-color);
+}
+
+#circleNav {
+  display: flex;
+  position: relative;
+  padding: 2px;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 14px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.circle:last-child {
+  margin-right: 0;
+}
+
+.circle:hover {
+    box-shadow: 0 0px 2px #222;
+}
+
+#ring {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left .2s;
+}
+
+.photo {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .2s;
+}
+
+.photo.show {
+    opacity: 1;
+}
+
+.photo.hide {
+    opacity: 0;
+}
