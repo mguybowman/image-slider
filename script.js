@@ -45,6 +45,17 @@ function updateImage() {
   }
 }
 
+function slideShow() {
+  if (currentIndex === photos.length - 1) {
+    currentIndex = 0;
+  } else {
+    currentIndex += 1;
+  }
+  updateImage();
+}
+
+const myInterval = setInterval(slideShow, 5000);
+
 document.addEventListener('click', (e) => {
   if (e.target === arrowLeft) {
     if (currentIndex === 0) {
@@ -53,6 +64,7 @@ document.addEventListener('click', (e) => {
       currentIndex -= 1;
     }
     updateImage();
+    clearInterval(myInterval);
   } else if (e.target === arrowRight) {
     if (currentIndex === photos.length - 1) {
       currentIndex = 0;
@@ -60,11 +72,13 @@ document.addEventListener('click', (e) => {
       currentIndex += 1;
     }
     updateImage();
+    clearInterval(myInterval);
   } else {
     for (let i = 0; i < photos.length; i += 1) {
       if (e.target === document.getElementById(`circle${i}`)) {
         currentIndex = i;
         updateImage();
+        clearInterval(myInterval);
       }
     }
   }

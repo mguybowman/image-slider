@@ -1,6 +1,7 @@
 :root {
   --text-color: #111;
   --text-color-secondary: #777;
+  --transition-time: 0.3s;
 }
 
 body {
@@ -59,9 +60,9 @@ main {
 }
 
 #arrowLeft:hover {
-    border-top: 4px solid var(--text-color);
-    border-left: 4px solid var(--text-color);
-  }
+  border-top: 4px solid var(--text-color);
+  border-left: 4px solid var(--text-color);
+}
 
 #arrowRight {
   border-top: 3px solid var(--text-color-secondary);
@@ -94,7 +95,7 @@ main {
 }
 
 .circle:hover {
-    box-shadow: 0 0px 2px #222;
+  box-shadow: 0 0px 2px #222;
 }
 
 #ring {
@@ -105,7 +106,7 @@ main {
   position: absolute;
   left: 0;
   top: 0;
-  transition: left .2s;
+  transition: left var(--transition-time);
 }
 
 .photo {
@@ -116,13 +117,13 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity .2s;
+  transition: opacity var(--transition-time);
 }
 
 .photo.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 .photo.hide {
-    opacity: 0;
+  opacity: 0;
 }
